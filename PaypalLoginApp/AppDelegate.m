@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BuyNowViewController.h"
 
 @implementation AppDelegate
 
@@ -14,6 +15,18 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    BuyNowViewController *buyVC = [[BuyNowViewController alloc] init];
+    buyVC.title = @"Pinterest Mock UI";
+    
+    UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:buyVC];
+    self.window.rootViewController = mainNav;
+    
+    UINavigationBar *navigationBar = mainNav.navigationBar;
+    navigationBar.barTintColor = [UIColor whiteColor];
+    navigationBar.barStyle = UIBarStyleDefault;
+    
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
